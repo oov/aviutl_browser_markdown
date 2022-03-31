@@ -15,6 +15,7 @@ body {
 
 </style>
 <link rel="stylesheet" href="./github-markdown-light.min.css">
+<link rel="stylesheet" href="./github.min.css">
 <div class="markdown-body"></div>
 <script src="./marked.min.js"></script>
 <script src="./highlight.min.js"></script>
@@ -39,7 +40,7 @@ AviUtlBrowser.registerRenderer(params => new Promise((resolve, reject) => {
     return resolve('');
   }
   current = m;
-  elem.innerHTML = marked(current);
+  elem.innerHTML = marked.parse(current);
   resolve('');
 }));
 </script>

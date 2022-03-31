@@ -43,6 +43,12 @@ if(NOT EXISTS "${GITHUB_MARKDOWN_CSS_PATH}")
   file(DOWNLOAD "${GITHUB_MARKDOWN_CSS_URL}" "${GITHUB_MARKDOWN_CSS_PATH}")
 endif()
 
+set(HIGHLIGHT_CSS_URL "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github.min.css")
+set(HIGHLIGHT_CSS_PATH "${CMAKE_BINARY_DIR}/github.min.css")
+if(NOT EXISTS "${HIGHLIGHT_CSS_PATH}")
+  file(DOWNLOAD "${HIGHLIGHT_CSS_URL}" "${HIGHLIGHT_CSS_PATH}")
+endif()
+
 add_custom_target(generate_content_html
   COMMAND ${CMAKE_COMMAND}
     -Dinput_file="${PROJECT_SOURCE_DIR}/src/content/index.html"
@@ -55,6 +61,7 @@ add_custom_target(create_content
   COMMAND ${CMAKE_COMMAND} -E make_directory "${PROJECT_BINARY_DIR}/bin/script/browser/contents"
   COMMAND ${CMAKE_COMMAND} -E copy
     "${GITHUB_MARKDOWN_CSS_PATH}"
+    "${HIGHLIGHT_CSS_PATH}"
     "${HIGHLIGHT_JS_PATH}"
     "${MARKED_JS_PATH}"
     "${PROJECT_BINARY_DIR}/content/"
