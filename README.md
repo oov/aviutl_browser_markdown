@@ -4,6 +4,8 @@
 
 [aviutl_browser](https://github.com/oov/aviutl_browser/) で Markdown 文書を表示するスクリプトです。
 
+絵文字や数式の表示にも対応した [MarkdownEX](https://github.com/karoterra/aviutl-markdownex) もあります。
+
 # インストール
 
 Markdown.anm は aviutl_browser に標準で付属しているので、別途インストールは必要ありません。
