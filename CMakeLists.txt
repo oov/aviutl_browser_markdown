@@ -56,6 +56,7 @@ add_custom_target(generate_content_html
   COMMAND ${CMAKE_COMMAND}
     -Dinput_file="${PROJECT_SOURCE_DIR}/src/content/index.html"
     -Doutput_file="${PROJECT_BINARY_DIR}/content/index.html"
+    -Dnewline="LF"
     -Dgit_tag="${git_tag}"
     -Dgit_revision="${git_revision}"
     -P "${PROJECT_SOURCE_DIR}/replace.cmake"
@@ -85,6 +86,7 @@ add_custom_target(generate_script
   COMMAND ${CMAKE_COMMAND}
     -Dinput_file="${PROJECT_SOURCE_DIR}/src/Markdown.anm"
     -Doutput_file="${PROJECT_BINARY_DIR}/bin/script/browser/Markdown.anm"
+    -Dnewline="CRLF"
     -Dgit_tag="${git_tag}"
     -Dgit_revision="${git_revision}"
     -P "${PROJECT_SOURCE_DIR}/replace.cmake"
@@ -94,6 +96,7 @@ add_custom_target(make_package ALL
   COMMAND ${CMAKE_COMMAND}
     -Dinput_file="${PROJECT_SOURCE_DIR}/README.md"
     -Doutput_file="${PROJECT_BINARY_DIR}/bin/Markdown.txt"
+    -Dnewline="CRLF"
     -Dgit_tag="${git_tag}"
     -Dgit_revision="${git_revision}"
     -P "${PROJECT_SOURCE_DIR}/replace.cmake"
