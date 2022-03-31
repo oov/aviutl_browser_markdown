@@ -72,6 +72,7 @@ add_custom_target(create_content
   COMMAND ${CMAKE_COMMAND} -E tar cf
     "${PROJECT_BINARY_DIR}/bin/script/browser/contents/Markdown.abc" --format=zip
     "github-markdown-light.min.css"
+    "github.min.css"
     "highlight.min.js"
     "index.html"
     "marked.min.js"
